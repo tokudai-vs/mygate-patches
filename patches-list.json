@@ -48,7 +48,7 @@
           "description": "The package name of the MicroG-RE / GmsCore build.",
           "required": false,
           "type": "kotlin.String",
-          "default": "app.morphe.android.gms",
+          "default": "app.revanced.android.gms",
           "values": null
         }
       ]

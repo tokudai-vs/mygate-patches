@@ -33,7 +33,7 @@ Provides a streamlined, distraction-free MyGate interface:
 
 ### 2. 🔔 MyGate GmsCore support
 Enables 100% working push notifications, gate approval alerts, and e-Intercom on non-root, re-signed APKs using **MicroG-RE**:
-- **MicroG-RE Default**: Defaults to official Morphe MicroG-RE (`app.morphe.android.gms`) while also supporting ReVanced GmsCore (`app.revanced.android.gms`) via patch options.
+- **MicroG-RE Default**: Targets `app.revanced.android.gms` ([MorpheApp/MicroG-RE](https://github.com/MorpheApp/MicroG-RE)) by default, ensuring instant, working push notifications out of the box while also supporting custom MicroG builds (`app.morphe.android.gms`) via patch options.
 - **Package Spoofing & Visibility**: Injects spoofed metadata (`SPOOFED_PACKAGE_NAME` = `com.mygate.user`, `SPOOFED_PACKAGE_SIGNATURE`) and Android 11+ package visibility queries for MicroG-RE.
 - **C2DM Redirection**: Rewrites all GCM/C2DM permissions, broadcast receivers, and intent actions to the configured MicroG vendor.
 - **Firebase HTTPS Certificate Spoofing**: Patches `X-Android-Cert` HTTP headers during Firebase Installations Service (FIS) token registration to match the original MyGate developer signing certificate (`AAB7E367980DA927FB146E862057CC87CD766987`), avoiding `FIS_AUTH_ERROR`.

@@ -48,11 +48,11 @@ val myGateGmsCoreSupportPatch = patch(
         key = "gmsCoreVendor",
         title = "GmsCore vendor package",
         description = "The package name of the MicroG-RE / GmsCore build.",
-        default = "app.morphe.android.gms",
+        default = "app.revanced.android.gms",
     )
 
     execute {
-        val vendorPackage = gmsCoreVendorOption.value ?: "app.morphe.android.gms"
+        val vendorPackage = gmsCoreVendorOption.value ?: "app.revanced.android.gms"
         val vendorPrefix = vendorPackage.removeSuffix(".android.gms")
         val sha1Lower = MYGATE_ORIGINAL_CERT_SHA1.lowercase()
         val sha1Upper = MYGATE_ORIGINAL_CERT_SHA1.uppercase()
