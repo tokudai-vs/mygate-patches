@@ -1,4 +1,4 @@
-rootProject.name = "mygate-patches"
+rootProject.name = "tokudai-patches"
 
 pluginManagement {
     repositories {

@@ -7,12 +7,12 @@ group = "com.github.tokudai-vs"
 
 patches {
     about {
-        name = "MyGate Patches"
-        description = "Ad-free experience, UI cleanup, and MicroG-RE GmsCore notification support for MyGate."
-        source = "https://github.com/tokudai-vs/mygate-patches"
+        name = "Tokudai's Patches"
+        description = "Custom patches for MyGate and other applications, featuring ad-free experience, UI decluttering, and MicroG-RE push notifications."
+        source = "https://github.com/tokudai-vs/tokudai-patches"
         author = "tokudai-vs"
         contact = "na"
-        website = "https://github.com/tokudai-vs/mygate-patches"
+        website = "https://github.com/tokudai-vs/tokudai-patches"
         license = "GPLv3"
     }
 }

@@ -6,11 +6,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        # MyGate Patches bug report
+        # Tokudai's Patches bug report
 
         Before creating a new bug report, please keep the following in mind:
 
-        - **Do not submit a duplicate bug report**: Search for existing bug reports [here](https://github.com/tokudai-vs/mygate-patches/issues?q=label%3A%22Bug+report%22).
+        - **Do not submit a duplicate bug report**: Search for existing bug reports [here](https://github.com/tokudai-vs/tokudai-patches/issues?q=label%3A%22Bug+report%22).
   - type: textarea
     attributes:
       label: Bug description
