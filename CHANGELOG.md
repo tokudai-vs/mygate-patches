@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/tokudai-vs/tokudai-patches/compare/v1.0.0...v1.1.0) (2026-11-21)
+
+### ✨ New Features
+
+* rename to Tokudai's Patches, add bundle icon, and update docs ([73c53a5](https://github.com/tokudai-vs/tokudai-patches/commit/73c53a59105aacd40a44d0052ed98dcd4f9faf22))
+
 ## [1.1.0-dev.1](https://github.com/tokudai-vs/tokudai-patches/compare/v1.0.0...v1.1.0-dev.1) (2026-11-21)
 
 ### ✨ New Features
