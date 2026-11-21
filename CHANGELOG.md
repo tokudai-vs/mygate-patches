@@ -1,3 +1,9 @@
+## [1.1.1-dev.1](https://github.com/tokudai-vs/tokudai-patches/compare/v1.1.0...v1.1.1-dev.1) (2026-11-21)
+
+### 🐛 Bug Fixes
+
+* **mygate:** default gmsCoreVendor to app.revanced.android.gms for MicroG-RE ([bde72aa](https://github.com/tokudai-vs/tokudai-patches/commit/bde72aa0219df24dc903a3c0bb9db9a54471cb5f))
+
 ## [1.1.0](https://github.com/tokudai-vs/tokudai-patches/compare/v1.0.0...v1.1.0) (2026-11-21)
 
 ### ✨ New Features
