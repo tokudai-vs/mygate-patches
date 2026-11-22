@@ -89,11 +89,11 @@ Keeps the home screen focused purely on gate approvals and household entries:
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.2.0](https://github.com/tokudai-vs/tokudai-patches/releases/tag/v1.2.0)**&nbsp;&nbsp;&middot;&nbsp;&nbsp;`main`&nbsp;&nbsp;&middot;&nbsp;&nbsp;**5 patches** across **1 apps**&nbsp;&nbsp;&middot;&nbsp;&nbsp;[Full details](PATCHES.md)
+> **[v1.2.0](https://github.com/tokudai-vs/tokudai-patches/releases/tag/v1.2.0)**&nbsp;&nbsp;&middot;&nbsp;&nbsp;`dev`&nbsp;&nbsp;&middot;&nbsp;&nbsp;**5 patches** across **1 apps**&nbsp;&nbsp;&middot;&nbsp;&nbsp;[Full details](PATCHES.md)
 
 | # | App | Patches | Version | Package |
 |---|---|---|---|---|
-| 1 | [**MyGate**](PATCHES.md#mygate-commygateuser) | 5 | `7.38.2`, `7.39.0`, `7.40.1` | [`com.mygate.user`](https://play.google.com/store/apps/details?id=com.mygate.user) |
+| 1 | [**MyGate**](PATCHES.md#mygate-commygateuser) | 5 | `7.38.2`, `7.39.0`, `7.40.1`, `7.41.0` | [`com.mygate.user`](https://play.google.com/store/apps/details?id=com.mygate.user) |
 <!-- PATCHES_END -->
 
 ---
