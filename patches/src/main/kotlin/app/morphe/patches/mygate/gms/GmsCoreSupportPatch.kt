@@ -38,8 +38,8 @@ private fun liveDataFieldOf(method: MutableMethod): FieldReference? =
         ?.firstOrNull { it.type == "Landroidx/lifecycle/MutableLiveData;" }
 
 @Suppress("unused")
-val myGateGmsCoreSupportPatch = patch(
-    name = "MyGate GmsCore support",
+val gmsCoreSupportPatch = patch(
+    name = "GmsCore support",
     description = "Enables push notifications, gate approvals, and e-Intercom on re-signed APKs using MicroG-RE (GmsCore).",
 ) {
     compatibleWith(COMPATIBILITY_MYGATE)
