@@ -1,3 +1,9 @@
+## [1.2.0-dev.1](https://github.com/tokudai-vs/tokudai-patches/compare/v1.1.1...v1.2.0-dev.1) (2026-11-22)
+
+### ✨ New Features
+
+* split MyGate into 5 modular patches and add automated version bump workflow ([35c03e5](https://github.com/tokudai-vs/tokudai-patches/commit/35c03e549b6c6bd214570f1edd3e69849cabcc19))
+
 ## [1.1.1](https://github.com/tokudai-vs/tokudai-patches/compare/v1.1.0...v1.1.1) (2026-11-21)
 
 ### 🐛 Bug Fixes
