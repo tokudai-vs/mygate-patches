@@ -1,3 +1,9 @@
+## [1.4.0-dev.1](https://github.com/tokudai-vs/tokudai-patches/compare/v1.3.0...v1.4.0-dev.1) (2026-11-28)
+
+### ✨ New Features
+
+* **mygate:** support v7.41.1, hide Notice Board WebView ads, and disable Flutter Community Posts in home bloat patch ([e8bba85](https://github.com/tokudai-vs/tokudai-patches/commit/e8bba8520f7d17b62948370b0ff8df7704172728))
+
 ## [1.3.0](https://github.com/tokudai-vs/tokudai-patches/compare/v1.2.0...v1.3.0) (2026-11-22)
 
 ### ✨ New Features
