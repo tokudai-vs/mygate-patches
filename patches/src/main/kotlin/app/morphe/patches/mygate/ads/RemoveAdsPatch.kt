@@ -265,6 +265,43 @@ val removeAdsPatch = patch(
                 invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
                 const-string v1, "society_highest_plan"
                 invoke-virtual {p1, v1, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+                const-string v1, "home_page_enabled_ad_sdk"
+                const-string v2, "0"
+                invoke-virtual {p1, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+                const-string v1, "notification_enabled_ad_sdk"
+                invoke-virtual {p1, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+            """,
+        )
+
+        // ── 6b. Filter sponsored "Ad" cards in Notice Board WebView (cmp.mygate.com) ──
+        val noticeAdFilterJs = "(function(){function hideAds(){try{var els=document.querySelectorAll('*');for(var i=0;i<els.length;i++){var el=els[i];if(el.childElementCount>1)continue;if(el.childElementCount===1&&(!el.firstElementChild||el.firstElementChild.tagName.toLowerCase()!=='svg'))continue;var t=(el.textContent||'').trim();if(t!=='Ad'&&t!=='AD')continue;var r=el.getBoundingClientRect();if(!r||r.height<=0||r.height>44||r.width>100)continue;var cur=el.parentElement,card=null;for(var d=0;d<9&&cur&&cur!==document.body&&cur!==document.documentElement;d++){if(cur.id==='root'||cur.id==='app'||cur.tagName==='MAIN')break;var txt=cur.textContent||'';if(txt.indexOf('Unread Notices')!==-1||txt.length>1500)break;var cr=cur.getBoundingClientRect();if(cr&&cr.height>=70&&cr.height<=520&&cr.width>=200){var bigKids=0;for(var k=0;k<cur.children.length;k++){var kr=cur.children[k].getBoundingClientRect();if(kr&&kr.height>=70&&kr.width>=200)bigKids++;}if(bigKids>=2)break;card=cur;}cur=cur.parentElement;}if(card&&card.style){card.style.setProperty('display','none','important');}}}catch(e){}}hideAds();setTimeout(hideAds,300);setTimeout(hideAds,1000);if(!window.__morpheNoticeObs&&window.MutationObserver){window.__morpheNoticeObs=new MutationObserver(function(){hideAds();});var root=document.documentElement||document.body;if(root)window.__morpheNoticeObs.observe(root,{childList:true,subtree:true});}})();"
+
+        Fingerprint(
+            definingClass = "Lcom/mygate/user/common/ui/CustomWebviewActivity\$4;",
+            name = "onPageFinished",
+            returnType = "V",
+            parameters = listOf(
+                "Landroid/webkit/WebView;",
+                "Ljava/lang/String;",
+            ),
+        ).method.addInstructions(
+            0,
+            """
+                if-eqz p1, :cond_skip_notice_filter
+                if-eqz p2, :cond_skip_notice_filter
+                const-string v0, "noticeListing"
+                invoke-virtual {p2, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+                move-result v0
+                if-nez v0, :cond_inject_notice_filter
+                const-string v0, "cmp.mygate.com"
+                invoke-virtual {p2, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+                move-result v0
+                if-eqz v0, :cond_skip_notice_filter
+                :cond_inject_notice_filter
+                const-string v0, "$noticeAdFilterJs"
+                const/4 v1, 0x0
+                invoke-virtual {p1, v0, v1}, Landroid/webkit/WebView;->evaluateJavascript(Ljava/lang/String;Landroid/webkit/ValueCallback;)V
+                :cond_skip_notice_filter
             """,
         )
 
@@ -289,6 +326,8 @@ val removeAdsPatch = patch(
             "SOCIETY_FREE_PLAN".toByteArray(Charsets.UTF_8) to "SOCIETY_DISA_PLAN".toByteArray(Charsets.UTF_8),
             "shouldShowAdTierBanner".toByteArray(Charsets.UTF_8) to "shouldHideAdTierBanner".toByteArray(Charsets.UTF_8),
             "ad_tag_enabled".toByteArray(Charsets.UTF_8) to "ad_tag_disable".toByteArray(Charsets.UTF_8),
+            "adTagEnabled".toByteArray(Charsets.UTF_8) to "adTagDisable".toByteArray(Charsets.UTF_8),
+            "adFilters".toByteArray(Charsets.UTF_8) to "noFilters".toByteArray(Charsets.UTF_8),
 
             // Feed Sponsored Notice Asset Neutralization
             "assets/images/svg/common/ic_notice_yellow.svg".toByteArray(Charsets.UTF_8) to "assets/images/svg/common/ic_notice_blockd.svg".toByteArray(Charsets.UTF_8),
