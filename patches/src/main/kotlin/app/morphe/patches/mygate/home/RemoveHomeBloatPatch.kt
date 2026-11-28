@@ -156,5 +156,42 @@ val removeHomeBloatPatch = patch(
                 :cond_frag_filter_end
             """,
         )
+
+        // Disable Home Screen Community Posts feed flag for both native Android & Flutter
+        Fingerprint(
+            definingClass = "Lcom/mygate/user/modules/userprofile/engine/UserProfileEngine;",
+            name = "b",
+            returnType = "V",
+            parameters = listOf(
+                "Lcom/mygate/user/modules/userprofile/engine/UserProfileEngine;",
+                "Lorg/json/JSONObject;",
+                "Z",
+            ),
+        ).method.addInstructions(
+            0,
+            """
+                const-string v0, "is_homescreen_feed_enabled"
+                const/4 v1, 0x0
+                invoke-virtual {p1, v0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+            """,
+        )
+
+        listOf(
+            "Lcom/mygate/user/modules/userprofile/entity/UserProfile;",
+            "Lcom/mygate/user/modules/userprofile/entity/UserInfoPojoTemp;",
+        ).forEach { targetClass ->
+            Fingerprint(
+                definingClass = targetClass,
+                name = "getIsHomescreenFeedEnabled",
+                returnType = "I",
+                parameters = emptyList(),
+            ).method.addInstructions(
+                0,
+                """
+                    const/4 v0, 0x0
+                    return v0
+                """,
+            )
+        }
     }
 }

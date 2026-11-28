@@ -12,14 +12,14 @@ Clean, ad-free experience, UI decluttering, and reliable enhancements for Androi
 
 | App | Package Name | Compatible Versions | APK Download |
 |---|---|---|---|
-| **MyGate** | `com.mygate.user` | `7.41.0`, `7.40.1`, `7.39.0`, `7.38.2` | [Direct APK (APKCube)](https://apkcube.com/mygate/com.mygate.user) |
+| **MyGate** | `com.mygate.user` | `7.41.1`, `7.41.0`, `7.40.1`, `7.39.0`, `7.38.2` | [Direct APK (APKCube)](https://apkcube.com/mygate/com.mygate.user) |
 
 ---
 
 ## 🛡️ MyGate (`com.mygate.user`)
 
 > **Direct APK download:** [APKCube MyGate Archive](https://apkcube.com/mygate/com.mygate.user)  
-> Supported and verified on MyGate version **7.41.0** (arm64-v8a).
+> Supported and verified on MyGate version **7.41.1** (arm64-v8a).
 
 Available as **5 modular, independent patches** so you can pick and choose exactly what you want:
 
@@ -74,7 +74,7 @@ Keeps the home screen focused purely on gate approvals and household entries:
 ### Step 2: Patch Your App
 1. Go to the **Patcher** tab.
 2. Tap **Select an application** and choose **MyGate** (`com.mygate.user`).
-   - If not installed, download the compatible APK (version `7.41.0`) from [APKCube](https://apkcube.com/mygate/com.mygate.user).
+   - If not installed, download the compatible APK (version `7.41.1`) from [APKCube](https://apkcube.com/mygate/com.mygate.user).
 3. Select your desired patches:
    - ✅ **Remove ads**
    - ✅ **GmsCore support**

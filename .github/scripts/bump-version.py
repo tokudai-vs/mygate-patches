@@ -108,11 +108,18 @@ def main():
     print(f"Updated Constants.kt with targets:\n{new_targets_block}")
 
     # 4. Update README.md
+    orig_readme = None
     if readme_file.exists():
-        readme_content = readme_file.read_text(encoding="utf-8")
+        orig_readme = readme_file.read_text(encoding="utf-8")
+        readme_content = orig_readme
         readme_content = re.sub(
             r"(\| `)" + re.escape(max_current) + r"(`)",
             r"\g<1>" + latest_scraped + r"`, `" + max_current + r"\g<2>",
+            readme_content,
+        )
+        readme_content = re.sub(
+            r"(, `)" + re.escape(max_current) + r"(` \|)",
+            r"\g<1>" + max_current + r"`, `" + latest_scraped + r"\g<2>",
             readme_content,
         )
         readme_content = re.sub(
@@ -148,6 +155,8 @@ def main():
             )
             # Revert Constants.kt and README.md so workspace isn't left corrupted
             constants_file.write_text(constants_content, encoding="utf-8")
+            if orig_readme is not None:
+                readme_file.write_text(orig_readme, encoding="utf-8")
             sys.exit(1)
         print("Gradle compilation validation successful.")
 
